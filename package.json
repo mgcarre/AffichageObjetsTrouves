@@ -1,0 +1,10 @@
+{
+  "name": "objetstrouvessncf",
+  "version": "0.1.0",
+  "main": "server.js",
+  "author": "mgcarre",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

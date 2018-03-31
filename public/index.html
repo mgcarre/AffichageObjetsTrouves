@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objets Trouves</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <style>
+        .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 60px; /* Height of navbar */
+        height: calc(100vh - 60px);
+        padding-top: .5rem;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+        .sidebar {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+        .card-columns{
+            padding-top: .5em;
+        }
+        .card {
+            animation: displayCard 1s 500ms;
+        }
+        @keyframes displayCard {
+            from {
+                opacity: 0%;
+            }
+            to {
+                opacity: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Objets perdus</a>
+        <span class="navbar-text">
+            
+        </span>
+    </div>
+</nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="sidebar col-sm-12 col-md-5 col-lg-3 col-xl-2 bg-secondary text-white">
+                <div class="sidebar-sticky" id="app">
+                    <form>
+                        <div class="form-group">
+                            <label for="filterByGare">Filtre par gare</label>
+                            <select class="form-control" id="filterByGare">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterByNature">Filtre par type</label>
+                            <select class="form-control" id="filterByNature">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterByDate">Filtre par date</label>
+                            <input type="date" class="form-control" name="date" id="filterByDate">
+                        </div>
+                        <button id="filter" type="button" class="btn btn-outline-danger btn-lg btn-block">Affiner données</button>
+                        <button id="update" type="button" class="btn btn-outline-primary btn-lg btn-block">Charger 100 de +</button>
+                        <small id="filterHelp" class="form-text text-light">Aucun filtre actif</small>
+                    </form>
+                </div>
+            </nav>
+            <div class="col-sm-12 col-md-7 col-lg-9 col-xl-10">
+                <div class="card-columns" id="cards"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
