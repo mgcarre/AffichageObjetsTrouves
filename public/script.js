@@ -164,9 +164,7 @@ moment.locale(navigator.language)
 
 let x = new ObjetsPerdus()
 x.load()
-document.getElementById('update').addEventListener('click', () => {
-    x.load()
-})
+document.getElementById('update').addEventListener('click', () => x.load())
 document.getElementById('filter').addEventListener('click', () => x.runFiltrering())
 
 const filterConditions = (filter) => {
